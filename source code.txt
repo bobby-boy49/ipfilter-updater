@@ -1,0 +1,56 @@
+@echo off
+
+title ipfilter updater
+
+:A
+cls
+set /p menu="Do you want to continue? (Y/N): "
+if %menu%==Y goto Yes
+if %menu%==y goto Yes
+if %menu%==N goto No
+if %menu%==n goto No
+cls
+echo.
+echo Please answer me!...
+echo.
+set /p pause="Press any key to continue!... "
+goto A
+
+:Yes
+cls
+echo.
+echo Okay, let's continue...
+echo.
+echo please wait for the process to finish!
+echo.
+set /p pause="Press any key to continue!... "
+cls
+mkdir ipfilter
+cd ipfilter
+del ipfilter.dat
+cls
+TIMEOUT /T 10 /nobreak
+cls
+
+Powershell -Command "Invoke-WebRequest 'https://github.com/DavidMoore/ipfilter/releases/download/lists/ipfilter.dat' -OutFile ipfilter.dat"
+
+cd %TEMP%
+
+echo x=msgbox("finished" ,0, "All done!") >> msgbox.vbs
+
+start msgbox.vbs
+
+TIMEOUT /T 1 /nobreak
+cls
+del msgbox.vbs
+
+exit
+
+:No
+cls
+echo.
+echo Okay, let's exit...
+echo.
+set /p pause="Press any key to continue!... "
+exit
+
