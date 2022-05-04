@@ -1,5 +1,7 @@
 #/bin/bash
 
+clear
+
 figlet ip filter updater
 
 mkdir ipfilter
