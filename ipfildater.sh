@@ -1,6 +1,6 @@
 #/bin/bash
 
-figlet ipfildater
+figlet ip filter updater
 
 mkdir ipfilter
 
