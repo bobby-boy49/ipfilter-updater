@@ -1,5 +1,7 @@
 #/bin/bash
 
+figlet ipfildater.sh
+
 mkdir ipfilter
 
 cd ipfilter
