@@ -1,5 +1,7 @@
 #/bin/bash
 
+# You need to install cowsay and figlet if you want it to look better.
+
 clear
 
 figlet ip filter updater
